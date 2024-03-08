@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ВСЕ</title>
+</head>
+<style>
+
+    body {
+
+        background-color: #ff0000;
+
+
+
+
+    }
+
+</style>
+<body>
+
+USERS
+<br/><br/>
+<form th:method="GET" th:action="@{/new}" th:object="${user}">
+    <input type="submit" value="сОЗДАЕМ ЧЕЛИКЕСА"/>
+</form>
+<br/>
+<div th:each="user :${user}">
+    <a th:href="@{/id?id={id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
+    <a th:href="'/updateUser?id='+${user.id}">Update</a>
+    <a th:href="'/d?id='+${user.id}">Delete</a>
+</div>
+<br/>
+
+</body>
+</html>

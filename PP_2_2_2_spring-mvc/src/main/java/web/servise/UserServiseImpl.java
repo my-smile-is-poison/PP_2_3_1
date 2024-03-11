@@ -16,6 +16,7 @@ public class UserServiseImpl implements UserServise{
 
 
     @Override
+    @Transactional
     public List<User> getUsers() {
         return userDao.getUsers();
     }
@@ -26,18 +27,21 @@ public class UserServiseImpl implements UserServise{
     }
 
     @Override
+    @Transactional
     public void saveUser(User user) {
         userDao.saveUser(user);
 
     }
 
     @Override
+    @Transactional
     public void deleteUserById(Long id) {
         userDao.deleteUserById(id);
 
     }
 
     @Override
+    @Transactional
     public void updateUserById(Long id, User user) {
         userDao.updateUserById(id,user);
 
